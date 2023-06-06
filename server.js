@@ -6,6 +6,7 @@ const sqlConnection = createPool(config);
 var bodyParser = require('body-parser');
 const parseMp = require('express-parse-multipart');
 const songs = require('./songs/songsObj.js');
+const cors = require("cors")
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 //const { EventEmitter } = require("events");
 //const { readFileSync } = require("fs");
@@ -13,6 +14,9 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 //const testModule = require("./module.js");
 //const test = new EventEmitter();
 const app = express();
+app.use(cors({
+    origin: '*'
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
