@@ -1,14 +1,4 @@
 ﻿const fs = require("fs");
-function toArrayBuffer(buffer) {
-    const arrayBuffer = new ArrayBuffer(buffer.length);
-    const view = new Uint8Array(arrayBuffer);
-    for (let i = 0; i < buffer.length; ++i) {
-        view[i] = buffer[i];
-    }
-    return arrayBuffer;
-} 
-2
-[1,2,3,4]
 function sendMissing(number, array, callback = false) {
     let temp = [];
     for (let x = number; x < array.length; x++) {
@@ -31,8 +21,7 @@ const songsObj = {
         
     }
 }
-songsObj.add("Mariya Takeuchi - 中森明菜 OH NO, OH YES! (cover)",".mp3")
-songsObj.add("Anri - Shyness boy",".mp3")
+songsObj.add("Anri - Shyness boy", ".mp3");
 module.exports = {
     songsObj: songsObj,
     sendMissing: sendMissing
