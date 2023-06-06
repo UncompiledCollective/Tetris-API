@@ -34,7 +34,6 @@ const songsObj = {
 songsObj.add("Anri - DRIVING MY LOVE",".mp3")
 songsObj.add("Mariya Takeuchi - 中森明菜 OH NO, OH YES! (cover)",".mp3")
 songsObj.add("Anri - Shyness boy",".mp3")
-songsObj.add("Keiichi Okabe - Weight of the World The End of YoRHa (Extended Version)",".mp3")
 module.exports = {
     songsObj: songsObj,
     sendMissing: sendMissing
