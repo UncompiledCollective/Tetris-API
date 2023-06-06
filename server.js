@@ -6,6 +6,7 @@ const sqlConnection = createPool(config);
 var bodyParser = require('body-parser');
 const parseMp = require('express-parse-multipart');
 const songs = require('./songs/songsObj.js');
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 //const { EventEmitter } = require("events");
 //const { readFileSync } = require("fs");
 //const { readFile } = require("fs").promises;
