@@ -118,7 +118,6 @@ app.post("/post-file", parseMp, function (req, res) {
 
 )
 app.post("/new-score", function (req, res, next) {
-    console.log("new score running");
     new Promise(function (resolve, reject) {
         sqlConnection.getConnection(function (error, connection) {
             if (error) {
@@ -126,10 +125,9 @@ app.post("/new-score", function (req, res, next) {
             } else {
                 let temp = Object.values(req.body);
                 if (temp[0] === 0) {
-                    reject("Score 0 is insufficient.")
+                    reject("Score 0 is insufficient.");
                 }
-                let temp2 = [temp]
-                console.log(temp2);
+                let temp2 = [temp];
                 connection.query("INSERT INTO score (Score, lines_4, lines_3, lines_2, lines_1, lines_total, name, avatar_id ) VALUES ?", [temp2], function (err, result) {
                     if (err) {
                         reject(err);
